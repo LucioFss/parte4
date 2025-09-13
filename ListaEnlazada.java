@@ -212,7 +212,9 @@ public class ListaEnlazada<T> implements Lista<T>{
     }
 
     /**
-     * 
+     * Metodo que devuelve un elemento de la lista en una posicion especifica
+     * @param int posicion en la que se quiere obtener
+     * @return T elemento en la posicion especifico
      */
     @Override
     public T obtenerElemPos(int pos) {
@@ -233,6 +235,10 @@ public class ListaEnlazada<T> implements Lista<T>{
         return actual.item; //Se retorna el elemento en esa posicion
     }
 
+    /**
+     * Metodo que busca un elemento en la lista y dice si esta o no
+     * @return True si el elemento esta en la lista, False si no
+     */
     @Override
     public int buscar(T item) {
         //Comprobacion de lista vacia
@@ -253,16 +259,27 @@ public class ListaEnlazada<T> implements Lista<T>{
         return -1; //No se encontro
     }
 
+    /**
+     * Metodo que devuelve el tamaño actual de la lista
+     * @return int cantidad de elementos totales de la lista
+     */
     @Override
     public int longitud() {
         return size; //Se devuelve la cantidad total de elementos en la lista
     }
 
+    /**
+     * Metodo que evalua si la lista esta vacia o no
+     * @return True si la lista no tiene elementos, False si tiene
+     */
     @Override
     public boolean esVacia() {
         return size == 0 && cabezal == null;
     }
-
+    
+    /**
+     * Metodo que imprime toda la lista como un string en la terminal
+     */
     @Override
     public void imprimir() {
         Node<T>actual = cabezal;
